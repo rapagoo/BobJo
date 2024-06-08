@@ -2,15 +2,15 @@ import requests
 import xml.etree.ElementTree as ET
 import tkinter as tk
 from tkinter import ttk, messagebox
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk, ImageSequence
 import io
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
 from collections import defaultdict
 
 # 네이버 클라우드 플랫폼의 클라이언트 ID와 시크릿
-client_id = '5talpi42gm'
-client_secret = 'nMytoTHJEa2FqyhWskjwBTn6Xu79lZjWBQeZOtNT'
+client_id = 'YOUR_CLIENT_ID'  # 실제 클라이언트 ID로 대체하세요
+client_secret = 'YOUR_CLIENT_SECRET'  # 실제 클라이언트 시크릿으로 대체하세요
 
 # 한글 폰트 설정
 font_path = 'C:/Windows/Fonts/malgun.ttf'  # Malgun Gothic 폰트 경로
@@ -81,6 +81,11 @@ selected_lat = None
 selected_lng = None
 selected_station_name = None
 selected_station_charger_count = 0
+
+# GIF 애니메이션 변수 설정
+gif_frames = []
+gif_index = 0
+gif_label = None
 
 # API URL 설정
 url = 'http://apis.data.go.kr/B552584/EvCharger/getChargerInfo'
@@ -244,10 +249,40 @@ def show_graph():
     canvas.image = img
 
 
+# GIF 애니메이션 함수
+def animate_gif():
+    global gif_frames, gif_label, gif_index
+
+    gif_index += 1
+    gif_index %= len(gif_frames)
+    gif_frame = gif_frames[gif_index]
+
+    gif_label.config(image=gif_frame)
+    root.after(100, animate_gif)  # 100ms 간격으로 프레임 전환
+
+
+def load_gif():
+    global gif_frames, gif_label, gif_index
+
+    gif = Image.open(gif_path)
+    original_frames = [frame.copy().convert("RGBA") for frame in ImageSequence.Iterator(gif)]
+
+    desired_width = 100
+    desired_height = 100
+    # 이미지 크기 조절
+    resized_frames = [frame.resize((desired_width, desired_height), Image.BICUBIC) for frame in original_frames]
+
+    gif_frames = [ImageTk.PhotoImage(frame) for frame in resized_frames]
+    gif_index = 0
+
+    gif_label = tk.Label(gif_frame)
+    gif_label.pack(padx=5, pady=5)  # gif_frame에 추가하여 그래프 버튼 옆에 배치
+    animate_gif()
+
 # GUI 초기 설정
 root = tk.Tk()
 root.title("밥줘")
-root.geometry("700x800")
+root.geometry("800x800")
 
 # 프레임 설정
 search_frame = tk.Frame(root)
@@ -264,7 +299,15 @@ button_frame.grid(row=3, column=0, padx=10, pady=5, sticky="ew")
 
 root.grid_rowconfigure(1, weight=1)
 root.grid_rowconfigure(2, weight=1)
+root.grid_rowconfigure(4, weight=1)
 root.grid_columnconfigure(0, weight=1)
+
+# 내부 프레임 설정
+search_inner_frame_left = tk.Frame(search_frame)
+search_inner_frame_left.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+
+search_inner_frame_right = tk.Frame(search_frame)
+search_inner_frame_right.pack(side=tk.RIGHT, fill=tk.Y)
 
 # 시/군 목록
 cities = [
@@ -275,32 +318,40 @@ cities = [
 cities.sort()
 
 # 시 콤보박스
-si_label = tk.Label(search_frame, text="시/군 선택:")
+si_label = tk.Label(search_inner_frame_left, text="시/군 선택:")
 si_label.grid(row=0, column=0, padx=5, sticky="w")
-si_combo = ttk.Combobox(search_frame, values=cities)
+si_combo = ttk.Combobox(search_inner_frame_left, values=cities)
 si_combo.grid(row=0, column=1, padx=5, sticky="ew")
 
 # 검색 결과 개수 라벨
-count_label = tk.Label(search_frame, text="")
+count_label = tk.Label(search_inner_frame_left, text="")
 count_label.grid(row=0, column=2, padx=5, sticky="e")
 
 # 검색 버튼
-search_button = tk.Button(search_frame, text="검색", command=search)
+search_button = tk.Button(search_inner_frame_left, text="검색", command=search)
 search_button.grid(row=0, column=3, padx=5, sticky="e")
 
 # 지도 버튼
-map_button = tk.Button(search_frame, text="지도", command=show_map_popup)
+map_button = tk.Button(search_inner_frame_left, text="지도", command=show_map_popup)
 map_button.grid(row=0, column=4, padx=5, sticky="e")
 
 # 즐겨찾기 버튼
-add_fav_button = tk.Button(search_frame, text="즐겨찾기", command=lambda: add_to_favorites(tree, favorites))
+add_fav_button = tk.Button(search_inner_frame_left, text="즐겨찾기", command=lambda: add_to_favorites(tree, favorites))
 add_fav_button.grid(row=0, column=5, padx=5, sticky="e")
 
+# 충전소 개수 그래프 버튼
+graph_button = tk.Button(search_inner_frame_left, text="그래프", command=show_graph)
+graph_button.grid(row=0, column=6, padx=5, sticky="e")
+
 # 충전소 목록 내 텍스트 검색창
-search_label = tk.Label(search_frame, text="결과 내 검색:")
+search_label = tk.Label(search_inner_frame_left, text="결과 내 검색:")
 search_label.grid(row=1, column=0, padx=5, sticky="w")
-search_entry = tk.Entry(search_frame)
+search_entry = tk.Entry(search_inner_frame_left)
 search_entry.grid(row=1, column=1, columnspan=6, padx=5, pady=5, sticky="ew")
+
+# GIF 프레임 설정
+gif_frame = tk.Frame(search_inner_frame_right)
+gif_frame.pack(side=tk.TOP, padx=5, pady=5)
 
 
 def filter_list(event):
@@ -372,10 +423,6 @@ detail_notebook.add(status_frame, text='충전기 상태')
 status_text = tk.Text(status_frame, height=15, width=50)  # 충전기 상태 박스의 높이와 너비 설정
 status_text.pack(fill=tk.BOTH, expand=True)
 
-# 충전소 개수 그래프 버튼
-graph_button = tk.Button(search_frame, text="그래프", command=show_graph)
-graph_button.grid(row=0, column=6, padx=5, sticky="e")
-
 
 # 즐겨찾기 목록에 추가하는 함수
 def add_to_favorites(tree, favorites):
@@ -435,6 +482,10 @@ def show_details(event):
 
 tree.bind("<Double-1>", show_details)
 fav_tree.bind("<Double-1>", show_details)
+
+# GIF 파일 경로 설정 및 애니메이션 로드
+gif_path = "ChargingAnim.gif"
+load_gif()
 
 # GUI 실행
 root.mainloop()
