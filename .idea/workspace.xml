@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33a5dc48-49a2-4acb-bb15-b0e01ac98449" name="Changes" comment="Added Naver Map, search function, graph and bookmark.">
+    <list default="true" id="33a5dc48-49a2-4acb-bb15-b0e01ac98449" name="Changes" comment="Added GIF File and Animation.">
+      <change afterPath="$PROJECT_DIR$/noti.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BobJo.py" beforeDir="false" afterPath="$PROJECT_DIR$/BobJo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;rapagoo&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/rapagoo/BobJo.git&quot;,
+    &quot;accountId&quot;: &quot;77149701-df5e-4494-bc27-e013076b9f44&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -36,6 +49,9 @@
   "keyToString": {
     "Python.BobJo.executor": "Run",
     "Python.Test.executor": "Run",
+    "Python.noti(1).executor": "Run",
+    "Python.noti.executor": "Run",
+    "Python.teller.executor": "Run",
     "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -50,11 +66,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rapagoo\PycharmProjects\BobJo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\rapagoo\PycharmProjects\BobJo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.BobJo">
+  <component name="RunManager" selected="Python.teller">
     <configuration name="BobJo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="BobJo" />
       <option name="ENV_FILES" value="" />
@@ -101,8 +120,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="teller" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="BobJo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teller.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.teller" />
         <item itemvalue="Python.BobJo" />
         <item itemvalue="Python.Test" />
       </list>
@@ -130,7 +173,8 @@
       <workItem from="1716964366547" duration="7330000" />
       <workItem from="1716974364793" duration="3536000" />
       <workItem from="1716991270801" duration="105000" />
-      <workItem from="1717828450567" duration="2128000" />
+      <workItem from="1717828450567" duration="2289000" />
+      <workItem from="1718164527547" duration="3259000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit, Added zscode and charger type list">
       <option name="closed" value="true" />
@@ -148,7 +192,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716975470310</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added GIF File and Animation.">
+      <option name="closed" value="true" />
+      <created>1717830706027</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1717830706027</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,11 +237,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit, Added zscode and charger type list" />
     <MESSAGE value="Added Naver Map, search function, graph and bookmark." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Naver Map, search function, graph and bookmark." />
+    <MESSAGE value="Added GIF File and Animation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added GIF File and Animation." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BobJo$teller.coverage" NAME="teller Coverage Results" MODIFIED="1718168280502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BobJo$test.coverage" NAME="test Coverage Results" MODIFIED="1716908917878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BobJo$BobJo.coverage" NAME="BobJo Coverage Results" MODIFIED="1717830593201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BobJo$BobJo.coverage" NAME="BobJo Coverage Results" MODIFIED="1718167171394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BobJo$Test.coverage" NAME="Test Coverage Results" MODIFIED="1716965879607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BobJo$noti_1_.coverage" NAME="noti(1) Coverage Results" MODIFIED="1718166231491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BobJo$noti.coverage" NAME="noti Coverage Results" MODIFIED="1718166564365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
