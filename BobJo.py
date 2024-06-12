@@ -1,3 +1,4 @@
+import spam
 import requests
 import xml.etree.ElementTree as ET
 import tkinter as tk
@@ -203,7 +204,9 @@ def search():
     for row in filtered_data:
         tree.insert('', tk.END, values=(row[0],))
 
-    count_label.config(text=f"검색결과: {len(filtered_data)}개")
+    # Using the C extension to count stations
+    count = spam.count_stations(filtered_data)
+    count_label.config(text=f"검색결과: {count}개")
 
 
 # 충전소 개수를 그래프로 표시하는 함수
