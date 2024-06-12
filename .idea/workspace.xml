@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33a5dc48-49a2-4acb-bb15-b0e01ac98449" name="Changes" comment="Added GIF File and Animation.">
-      <change afterPath="$PROJECT_DIR$/noti.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teller.py" afterDir="false" />
+    <list default="true" id="33a5dc48-49a2-4acb-bb15-b0e01ac98449" name="Changes" comment="Telegram Bot Added.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BobJo.py" beforeDir="false" afterPath="$PROJECT_DIR$/BobJo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +72,7 @@
       <recent name="C:\Users\rapagoo\PycharmProjects\BobJo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.teller">
+  <component name="RunManager" selected="Python.BobJo">
     <configuration name="BobJo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="BobJo" />
       <option name="ENV_FILES" value="" />
@@ -145,8 +144,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.teller" />
         <item itemvalue="Python.BobJo" />
+        <item itemvalue="Python.teller" />
         <item itemvalue="Python.Test" />
       </list>
     </recent_temporary>
@@ -174,7 +173,7 @@
       <workItem from="1716974364793" duration="3536000" />
       <workItem from="1716991270801" duration="105000" />
       <workItem from="1717828450567" duration="2289000" />
-      <workItem from="1718164527547" duration="3259000" />
+      <workItem from="1718164527547" duration="7478000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit, Added zscode and charger type list">
       <option name="closed" value="true" />
@@ -200,7 +199,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717830706027</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Telegram Bot Added.">
+      <option name="closed" value="true" />
+      <created>1718168328133</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718168328133</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,12 +245,13 @@
     <MESSAGE value="First Commit, Added zscode and charger type list" />
     <MESSAGE value="Added Naver Map, search function, graph and bookmark." />
     <MESSAGE value="Added GIF File and Animation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added GIF File and Animation." />
+    <MESSAGE value="Telegram Bot Added." />
+    <option name="LAST_COMMIT_MESSAGE" value="Telegram Bot Added." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BobJo$teller.coverage" NAME="teller Coverage Results" MODIFIED="1718168280502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BobJo$test.coverage" NAME="test Coverage Results" MODIFIED="1716908917878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/BobJo$BobJo.coverage" NAME="BobJo Coverage Results" MODIFIED="1718167171394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/BobJo$BobJo.coverage" NAME="BobJo Coverage Results" MODIFIED="1718172564046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BobJo$Test.coverage" NAME="Test Coverage Results" MODIFIED="1716965879607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BobJo$noti_1_.coverage" NAME="noti(1) Coverage Results" MODIFIED="1718166231491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/BobJo$noti.coverage" NAME="noti Coverage Results" MODIFIED="1718166564365" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
